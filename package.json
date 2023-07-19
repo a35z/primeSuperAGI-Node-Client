@@ -1,0 +1,10 @@
+{
+  "name": "superagi-client",
+  "version": "0.0.1",
+  "description": "Node.js package for Superagi",
+  "main": "superagi_client/index.js",
+  "repository": {
+    "type": "git",
+    "url": "https://app.superagi.com"
+  },
+  "author": "superagi <mukunda@superagi.c
