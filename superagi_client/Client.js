@@ -21,4 +21,15 @@ class Client {
         if (typeof apiKey !== 'string') throw new TypeError('apiKey is a mandatory field and it should be a string');
         if (typeof url !== 'string') throw new TypeError('url is an optional field and it should be a string');
         if (superagi !== null && !(superagi instanceof Superagi)) throw new TypeError('superagi is an optional field ' +
-         
+            'and it should be an instance of Superagi');
+
+        this.apiKey = apiKey;
+        this.url = url;
+        this.superagi = superagi;
+
+        validateApiKey(this.url, this.apiKey)
+
+        if (this.superagi === null) {
+            this.superagi = new Superagi(this.url, this.apiKey);
+        }
+ 
