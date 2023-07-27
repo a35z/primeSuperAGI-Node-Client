@@ -18,4 +18,7 @@ class Client {
                     superagi = null,
                     ...kwargs
                 } = {}) {
-        if (typeof apiKey !== 'string') throw new TypeError('apiKey is 
+        if (typeof apiKey !== 'string') throw new TypeError('apiKey is a mandatory field and it should be a string');
+        if (typeof url !== 'string') throw new TypeError('url is an optional field and it should be a string');
+        if (superagi !== null && !(superagi instanceof Superagi)) throw new TypeError('superagi is an optional field ' +
+         
