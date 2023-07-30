@@ -58,4 +58,14 @@ class Client {
         if (!Number.isInteger(agentId)) {
             throw new TypeError('agentId is a mandatory field and it should be an integer');
         }
-        if (!(agentUpdateConfig instanceof AgentU
+        if (!(agentUpdateConfig instanceof AgentUpdateConfig)) {
+            throw new TypeError('agentUpdateConfig is a mandatory field and ' +
+                'it should be an instance of AgentUpdateConfig');
+        }
+        return await this.superagi.updateAgent(agentId, agentUpdateConfig);
+    }
+
+    /**
+     * Pause an agent.
+     *
+     * @para
