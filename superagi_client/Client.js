@@ -40,4 +40,12 @@ class Client {
      * @param {AgentConfig} agentConfig - The configuration for the new agent.
      * @returns {Promise<Object>} A promise that resolves to an object containing the ID of the newly created agent.
      */
-    async createAg
+    async createAgent(agentConfig) {
+        if (!(agentConfig instanceof AgentConfig)) {
+            throw new TypeError('agentConfig is a mandatory field and it should be an instance of AgentConfig');
+        }
+        return await this.superagi.createAgent(agentConfig);
+    }
+
+    /**
+     * Update
