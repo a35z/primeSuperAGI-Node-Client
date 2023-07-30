@@ -48,4 +48,8 @@ class Client {
     }
 
     /**
-     * Update
+     * Update an existing agent.
+     *
+     * @param {number} agentId - The ID of the agent to update.
+     * @param {AgentUpdateConfig} agentUpdateConfig - The new configuration for the agent.
+     * @returns {Promise<Object>} A promise that resolves to an object 
