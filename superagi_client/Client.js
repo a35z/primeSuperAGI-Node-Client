@@ -32,4 +32,12 @@ class Client {
         if (this.superagi === null) {
             this.superagi = new Superagi(this.url, this.apiKey);
         }
- 
+    }
+
+    /**
+     * Create a new agent.
+     *
+     * @param {AgentConfig} agentConfig - The configuration for the new agent.
+     * @returns {Promise<Object>} A promise that resolves to an object containing the ID of the newly created agent.
+     */
+    async createAg
