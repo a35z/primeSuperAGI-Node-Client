@@ -52,4 +52,10 @@ class Client {
      *
      * @param {number} agentId - The ID of the agent to update.
      * @param {AgentUpdateConfig} agentUpdateConfig - The new configuration for the agent.
-     * @returns {Promise<Object>} A promise that resolves to an object 
+     * @returns {Promise<Object>} A promise that resolves to an object containing the ID of the updated agent.
+     */
+    async updateAgent(agentId, agentUpdateConfig) {
+        if (!Number.isInteger(agentId)) {
+            throw new TypeError('agentId is a mandatory field and it should be an integer');
+        }
+        if (!(agentUpdateConfig instanceof AgentU
