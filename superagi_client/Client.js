@@ -72,4 +72,9 @@ class Client {
      * @param {Array<number>} [agentRunIds=null] - The IDs of the agent runs to pause.
      * @returns {Promise<Object>} A promise that resolves to an object indicating whether the operation was successful.
      */
-    async pauseAgent(agentId, a
+    async pauseAgent(agentId, agentRunIds = null) {
+        if (!Number.isInteger(agentId)) {
+            throw new TypeError('agentId is a mandatory field and it should be an integer');
+        }
+        if (agentRunIds !== null && (!Array.isArray(agentRunIds)
+            || !agentRunIds.every(item =
