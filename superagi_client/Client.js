@@ -68,4 +68,8 @@ class Client {
     /**
      * Pause an agent.
      *
-     * @para
+     * @param {number} agentId - The ID of the agent to pause.
+     * @param {Array<number>} [agentRunIds=null] - The IDs of the agent runs to pause.
+     * @returns {Promise<Object>} A promise that resolves to an object indicating whether the operation was successful.
+     */
+    async pauseAgent(agentId, a
