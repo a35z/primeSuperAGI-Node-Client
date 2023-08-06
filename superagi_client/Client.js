@@ -95,4 +95,11 @@ class Client {
             throw new TypeError('agentId is a mandatory field and it should be an integer');
         }
         if (agentRunIds !== null && (!Array.isArray(agentRunIds)
-            || 
+            || !agentRunIds.every(item => Number.isInteger(item)))) {
+            throw new TypeError('agentRunIds is an optional field and it should be an array of integers');
+        }
+        return await this.superagi.resumeAgent(agentId, agentRunIds);
+    }
+
+    /**
+     * Create a new agent ru
