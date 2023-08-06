@@ -86,4 +86,8 @@ class Client {
     /**
      * Resume an agent.
      *
-     * @param {number} agentId - The I
+     * @param {number} agentId - The ID of the agent to resume.
+     * @param {Array<number>} agentRunIds - The IDs of the agent runs to resume.
+     * @returns {Promise<Object>} A promise that resolves to an object indicating whether the operation was successful.
+     */
+    async resumeAg
