@@ -108,4 +108,8 @@ class Client {
      * @param {AgentRun} [agentRun=null] - The configuration for the new agent run.
      * @returns {Promise<Object>} A promise that resolves to an object containing the ID of the newly created agent run.
      */
-    async crea
+    async createAgentRun(agentId, agentRun = null) {
+        if (!Number.isInteger(agentId)) {
+            throw new TypeError('agentId is a mandatory field and it should be an integer');
+        }
+        if (agentRun !== null && !(agentRun instanceof
