@@ -102,4 +102,10 @@ class Client {
     }
 
     /**
-     * Create a new agent ru
+     * Create a new agent run.
+     *
+     * @param {number} agentId - The ID of the agent to run.
+     * @param {AgentRun} [agentRun=null] - The configuration for the new agent run.
+     * @returns {Promise<Object>} A promise that resolves to an object containing the ID of the newly created agent run.
+     */
+    async crea
