@@ -112,4 +112,13 @@ class Client {
         if (!Number.isInteger(agentId)) {
             throw new TypeError('agentId is a mandatory field and it should be an integer');
         }
-        if (agentRun !== null && !(agentRun instanceof
+        if (agentRun !== null && !(agentRun instanceof AgentRun)) {
+            throw new TypeError('agentRun is an optional field and it should be an instance of AgentRun');
+        }
+        return await this.superagi.createAgentRun(agentId, agentRun);
+    }
+
+    /**
+     * Get the status of an agent run.
+     *
+     * @param {number} age
