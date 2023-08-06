@@ -90,4 +90,9 @@ class Client {
      * @param {Array<number>} agentRunIds - The IDs of the agent runs to resume.
      * @returns {Promise<Object>} A promise that resolves to an object indicating whether the operation was successful.
      */
-    async resumeAg
+    async resumeAgent(agentId, agentRunIds = null) {
+        if (!Number.isInteger(agentId)) {
+            throw new TypeError('agentId is a mandatory field and it should be an integer');
+        }
+        if (agentRunIds !== null && (!Array.isArray(agentRunIds)
+            || 
