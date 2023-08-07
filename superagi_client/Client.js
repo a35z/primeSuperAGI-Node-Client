@@ -121,4 +121,9 @@ class Client {
     /**
      * Get the status of an agent run.
      *
-     * @param {number} age
+     * @param {number} agentId - The ID of the agent.
+     * @param {AgentRunFilter} [agentRunFilter=null] - The filter to apply to the agent runs.
+     * @returns {Promise<Array<Object>>} A promise that resolves to a list of objects containing the run IDs
+     * and their statuses.
+     */
+    asyn
