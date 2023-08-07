@@ -131,4 +131,12 @@ class Client {
             throw new TypeError('agentId is a mandatory field and it should be an integer');
         }
         if (agentRunFilter !== null && !(agentRunFilter instanceof AgentRunFilter)) {
-            throw new TypeError('
+            throw new TypeError('agentRunFilter is an optional field and it should be an instance of AgentRunFilter');
+        }
+        return await this.superagi.getAgentRunStatus(agentId, agentRunFilter);
+    }
+
+    /**
+     * Get the resources of an agent run.
+     *
+     * @param {Array<number>} agentRunIds - The IDs
