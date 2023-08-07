@@ -126,4 +126,9 @@ class Client {
      * @returns {Promise<Array<Object>>} A promise that resolves to a list of objects containing the run IDs
      * and their statuses.
      */
-    asyn
+    async getAgentRunStatus(agentId, agentRunFilter = null) {
+        if (!Number.isInteger(agentId)) {
+            throw new TypeError('agentId is a mandatory field and it should be an integer');
+        }
+        if (agentRunFilter !== null && !(agentRunFilter instanceof AgentRunFilter)) {
+            throw new TypeError('
