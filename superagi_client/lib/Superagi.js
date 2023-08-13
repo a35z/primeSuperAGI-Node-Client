@@ -125,3 +125,7 @@ class Superagi {
             }
             throw new Error(`${error.response.status.toString()} => ${error.response.data}`);
         }
+    }
+}
+
+module.exports = Superagi;
