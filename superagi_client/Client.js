@@ -139,4 +139,9 @@ class Client {
     /**
      * Get the resources of an agent run.
      *
-     * @param {Array<number>} agentRunIds - The IDs
+     * @param {Array<number>} agentRunIds - The IDs of the agent runs.
+     * @returns {Promise<Object>} A promise that resolves to an object containing the run IDs and their
+     * associated resources.
+     */
+    async getAgentRunResources(agentRunIds) {
+        if (agentRunIds !== null && (!Array.isArray(agentRu
