@@ -148,4 +148,8 @@ class Client {
             || !agentRunIds.every(item => Number.isInteger(item)))) {
             throw new TypeError('agentRunIds is a mandatory field and it should be an array of integers');
         }
-        return await this.superagi.getAgentRunResources(age
+        return await this.superagi.getAgentRunResources(agentRunIds);
+    }agentRunIds
+}
+
+module.exports = {Client: Client};
